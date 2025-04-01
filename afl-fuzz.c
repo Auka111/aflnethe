@@ -1939,9 +1939,8 @@ static void increment_hit_bits(){
 
 static void add_to_queue(u8* fname, u32 len, u8 passed_det) {
 
-
   struct queue_entry* q = ck_alloc(sizeof(struct queue_entry));
-
+  
   // @RB@ added these for every queue entry
   q->trace_mini = ck_alloc(MAP_SIZE >> 3);
   minimize_bits(q->trace_mini, trace_bits);
@@ -2463,8 +2462,8 @@ static void update_bitmap_score(struct queue_entry* q) {
             previous winner, discard its trace_bits[] if necessary. */
 
          if (!--top_rated[i]->tc_ref) {
-           ck_free(top_rated[i]->trace_mini);
-           top_rated[i]->trace_mini = 0;
+           //ck_free(top_rated[i]->trace_mini);
+           //top_rated[i]->trace_mini = 0;
          }
 
        }
